@@ -12,7 +12,7 @@ from distwise import distwise_analysis
 st.set_page_config(layout='wide',page_title="India's Information")
 #========================================================================================
 
-df = pd.read_csv("./census_data/final_df.csv")
+df = pd.read_csv("census_data/final_df.csv")
 df['District']=df['District'] +"("+ df['District code'].astype('str')+ ")"
 df["Sex_ratio"] = round((df['Female']/df['Male'])*100,2)
 df['Illiterate_ratio'] = round((df['Illiterate_Education']/df['Literate_Education'])*100,2)
@@ -55,7 +55,7 @@ show =st.sidebar.button("Show analysis")
 
 ## overall summary section-----------------------------------------------------------------------
 if summary:
-    df = pd.read_csv("./census_data/final_df.csv")
+    df = pd.read_csv("census_data/final_df.csv")
     df['District']=df['District'] +"("+ df['District code'].astype('str')+ ")"
     df["Sex_ratio"] = round((df['Female']/df['Male'])*100,2)
     df['Illiterate_ratio'] = round((df['Illiterate_Education']/df['Literate_Education'])*100,2)
